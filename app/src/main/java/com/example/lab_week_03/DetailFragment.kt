@@ -32,8 +32,14 @@ class DetailFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate layout untuk fragment ini
+        // Inflate layout fragment_detail.xml
         return inflater.inflate(R.layout.fragment_detail, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val coffeeId = arguments?.getInt(COFFEE_ID, 0) ?: 0
+        setCoffeeData(coffeeId)
     }
 
     fun setCoffeeData(id: Int) {
@@ -54,12 +60,12 @@ class DetailFragment : Fragment() {
     }
 
     companion object {
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        private const val COFFEE_ID = "COFFEE_ID"
+
+        fun newInstance(coffeeId: Int) =
             DetailFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                    putInt(COFFEE_ID, coffeeId)
                 }
             }
     }
