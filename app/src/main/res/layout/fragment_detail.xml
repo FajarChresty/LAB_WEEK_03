@@ -14,7 +14,8 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textStyle="bold"
-        tools:text="@string/affogato_title" />
+        android:textSize="20sp"
+        tools:text="@string/affogato_title"/>
 
     <View
         android:layout_width="match_parent"
@@ -29,4 +30,11 @@
         android:gravity="center"
         tools:text="@string/affogato_desc" />
 
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"/>
 </LinearLayout>
